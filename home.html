@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Learn</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        *, html, body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        :root {
+            --px-20: 20px;
+            --px-10: 10px
+        }
+        body {
+            background-color: rgb(255, 255, 255);
+        }
+        nav {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            max-width: 90%;
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+        nav li {
+            padding: var(--px-10) var(--px-20);
+            margin:  var(--px-10);
+            border-radius: 0px;
+
+        }
+        nav li:hover {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            transition: all .2s ease-in-out;
+        }
+        .active {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            transition: all .2s ease-in-out;
+        }
+        nav li a {
+            color: white;
+        }
+        .row {
+            display: flex;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        @media (max-width: 768px) {
+            :root {
+                --px-20: 15px;
+                --px-10: 7px
+            }
+            nav {
+                margin: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <ul class="row">
+            <li class=""><a href="#"><span class="material-symbols-outlined">
+                folder_special
+                </span></a></li>
+            <li ><a href="#"><span class="material-symbols-outlined">
+                person
+                </span></a></li>
+            <li class="active"><a href="#"><span class="material-symbols-outlined">
+                home
+                </span></a></li>
+            <li><a href="#"><span class="material-symbols-outlined">
+                call_quality
+                </span></a></li>
+            <li><a href="#"><span class="material-symbols-outlined">
+                settings
+                </span></a></li>
+        </ul>
+    </nav>
+
+    <main>
+        
+    </main>
+
+</body>
+</html>
