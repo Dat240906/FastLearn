@@ -1,0 +1,50 @@
+*, html, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --cl-light-1: white;
+    --cl-light-bg: white;
+    --cl-light-2: #ebebeb;
+    --cl-light-3: #FFFFFF;
+    --cl-light-4: white;
+    --cl-light-box-shadow: rgba(255, 255, 255, 0.2);
+    --cl-light-box-shadow-2: rgba(255, 255, 255, 0.5);
+    --cl-dark-box-shadow:  rgba(0, 0, 0, 0.1);
+    --cl-dark-box-shadow-2:  rgba(0, 0, 0, 0.15);
+    --cl-dark-1: #222;
+    --cl-dark-2: rgb(35, 35, 35);
+    
+    --box-shadow-dark: rgba(0, 0, 0, 0.1);;
+    --px-20: 20px;
+    --px-10: 10px;
+    --px-30: 30px;
+    --px-14: 14px;
+    --px-16: 16px;
+    --px-13: 13px;
+    --px-80: 100px
+}
+
+html {
+    height: 100vh;
+    background-color: var(--cl-light-1) ;
+}
+
+/* body {
+    background-color: var(--cl-light-1);
+} */
+
+p {
+    color: var(--cl-dark-2) !important;
+}
+
+.active {
+    background: var(--cl-light-box-shadow);
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
+    box-shadow: 0 2px 5px var(--cl-dark-box-shadow);
+
+}

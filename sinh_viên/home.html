@@ -8,21 +8,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
         </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../assets/css/base.css">
     <style>
-        *, html, body {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        :root {
-            --px-20: 20px;
-            --px-10: 10px;
-            --px-80: 100px
-        }
-        body {
-            background-color: #F4F4F4;
-        }
+
+        
         nav {
             position: fixed;
             bottom: 0;
@@ -30,10 +19,12 @@
             transform: translateX(-50%);
             margin: 10px;
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-radius: 10px;
             max-width: 90%;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             z-index: 999;
+            transition: all .3s ease-in-out;
         }
         nav .first-span {
             margin-left: 10px;
@@ -52,14 +43,14 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .active {
-            background: rgba(255, 255, 255, 0.5);
+            background: var(--cl-light-box-shadow);
             border-radius: 10px;
             transition: all .2s ease-in-out;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
         }
         nav li a {
-            color: #494949;
+            color: cadetblue;
         }
         .row {
             display: flex;
@@ -74,36 +65,16 @@
      
         a {
             text-decoration: none;
-            color: #007BFF;
         }
-        @media (max-width: 768px) {
-            :root {
-                --px-20: 15px;
-                --px-10: 7px;
-                --px-80: 60px;
-            }
-            nav {
-                margin: 0;
-                margin-bottom: 10px;
-            }
-            .introduction {
-                flex-direction: column-reverse;
-            }
-            .introduction .right-side {
-                max-width: 100% !important;
-            }
-            .row-wrap .left-side {
-                width: 100%;
-            }
      
-        }
 
         main {
-            padding: var(--px-20);
+            padding: var(--px-30);
             margin-bottom: 80px; /* Giữ khoảng cách với nav */
+            background-color: var(--cl-light-bg);
         }
         .content {
-            background: #FFFFFF;
+            background: var(--cl-light-1);
             border-radius: 10px;
             padding: var(--px-20);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -111,10 +82,13 @@
         }
         .introduction {
 
-            background: #FFFFFF;
+            background: var(--cl-light-1);
             border-radius: 10px;
             padding: var(--px-20);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .introduction .left-side {
+            color: var(--cl-dark-2);
         }
         /* .introduction .left-side {
             max-width: 50%;
@@ -147,20 +121,24 @@
             gap: var(--px-20);
         }
 
-        .info-update {
+        .infomations {
             flex: 1;
         }
-
-        .info-update h2 {
-            color: #007BFF;
+        .fast-access h2,
+        .infomations h2 {
+            color: cadetblue;
+            margin: 10px;
+            margin-left: 0;
         }
 
-        .info-update ul {
+
+
+        .infomations ul {
             list-style-type: none;
             padding: 0;
         }
 
-        .info-update li {
+        .infomations li {
             margin: var(--px-10) 0;
         }
 
@@ -172,21 +150,24 @@
         }
 
         .card {
-            background: #FFFFFF;
+            background: var(--cl-light-3);
             border-radius: 10px;
             padding: var(--px-20);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin-bottom: var(--px-20);
             transition: transform 0.2s, box-shadow 0.2s;
+            color: var(--cl-dark-1);
         }
-
+        .card p {
+            color: var(--cl-dark-2);
+        }
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
         .card h3 a {
-            color: #495057;
+            color: var(--cl-dark-1);
             text-decoration: none;
         }
 
@@ -198,8 +179,9 @@
         }
         .center-x {
             align-items: center;
+            display: flex;
         }
-        .content .info-update {
+        .content .infomations {
             flex: 1 1 200px ;
         }
         span {
@@ -220,17 +202,44 @@
         .introduction ul span {
             color: green;
         }
+        .card .header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --px-30: 7px;
+                --px-20: 15px;
+                --px-10: 7px;
+                --px-80: 60px;
+            }
+            nav {
+                margin: 0;
+                margin-bottom: 10px;
+            }
+            .introduction {
+                flex-direction: column-reverse;
+            }
+            .introduction .right-side {
+                max-width: 100% !important;
+            }
+            .row-wrap .left-side {
+                width: 100%;
+            }
+     
+        }
     </style>
 </head>
 <body>
     
     <nav>
         <ul class="row">
-            <li class="first-span"><a href="#"><span class=" material-symbols-outlined">folder_special</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">person</span></a></li>
-            <li class="active"><a href="#"><span class="material-symbols-outlined">home</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">call_quality</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">settings</span></a></li>
+            <li class="first-span"><a href="./courses.html"><span class=" material-symbols-outlined">folder_special</span></a></li>
+            <li><a href="./account.html"><span class="material-symbols-outlined">person</span></a></li>
+            <li class="active"><a href="./home.html"><span class="material-symbols-outlined">home</span></a></li>
+            <li><a href="./support.html"><span class="material-symbols-outlined">call_quality</span></a></li>
+            <li><a href="./setting.html"><span class="material-symbols-outlined">settings</span></a></li>
         </ul>
     </nav>
 
@@ -270,25 +279,30 @@
                 </ul>
             </div>
             <div class="right-side">
-                <img src="./home.jpg" alt="">
+                <img src="../assets/img/home.png" alt="">
             </div>
         </div>
     
         <div class="content row-wrap">
-            <div class="info-update">
-                <h2>Khóa Học Mới Nhất</h2>
-                <ul>
-                    <li><a href="#">Khóa Học Lập Trình Web</a></li>
-                    <li><a href="#">Khoa Học Dữ Liệu với Python</a></li>
-                    <li><a href="#">Kiến Thức Cơ Bản Về Marketing Kỹ Thuật Số</a></li>
-                    <li><a href="#">Cơ Bản Thiết Kế UI/UX</a></li>
-                </ul>
+            <div class="infomations">
+                <h2 class="center-x"><span class="material-symbols-outlined">
+                    notifications
+                    </span>Thống Báo</h2>
+                <div class="card">
+                    <div class="header">
+                        <h3>Hệ thống khởi chạy</h3>
+                        <i class="time">1 phút trước</i>
+                    </div>
+                    <p>Hệ thống bắt đầu khởi chạy, các sinh viên và giảng viên có thể tạo và đăng kí khóa học ngay trên hệ thống.</p>
+                </div>
             </div>
     
             <div class="fast-access">
-                <h2>Liên Kết Nhanh</h2>
+                <h2 class="center-x"><span class="material-symbols-outlined">
+                    link
+                    </span>Liên Kết Nhanh</h2>
                 <div class="card">
-                    <h3><a href="#">Đăng Ký Ngay</a></h3>
+                    <h3><a href="#">Các Khóa Học</a></h3>
                     <p>Đăng ký khóa học và bắt đầu học ngay hôm nay!</p>
                 </div>
                 <div class="card">
@@ -303,5 +317,7 @@
         </div>
     </main>
 
+    <script src="../assets/js/scrollNav.js"></script>  
+    <script src="../assets/js/darkMode.js"></script>
 </body>
 </html>
